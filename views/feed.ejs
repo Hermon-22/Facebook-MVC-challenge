@@ -1,0 +1,44 @@
+<%- include('./main/header.ejs') %> 
+
+
+<h1>Add a Post</h1><br>
+
+
+<form action="/feed" method="POST">
+
+    <div class="mx-5 form">
+        <label for="exampleFormControlInput1" class="form-label">NAME:</label>
+        <input type="text" name="nameField" class="form-control" id="exampleFormControlInput1">
+    </div>
+    <!-- if any error happens -->
+    <% if(error && error.nameField ){ %> 
+        <p style="color: red;"><%= error.nameField.properties.message %> </p>
+    <% } %>
+    <div class="mx-5 form">
+        <label for="exampleFormControlTextarea1" class="form-label">MESSAGE:</label>
+        <textarea class="form-control" name="messageField" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <!-- if any error happens -->
+    <% if(error && error.messageField ){ %> 
+        <p style="color: red;"><%= error.messageField.properties.message %> </p>
+    <% } %>
+    <br>
+    <button type="submit" class="btn btn-info submitbtn">Submit</button>
+</form>
+<div class="feeds">
+<% if (result.length > 0) { %>
+    <% result.map(val => { %>
+        <div class="card cards"style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"><h4>Name: </h4><%= val.nameField %> </h5>
+                <p class="card-text"><h4>Message: </h4><%= val.messageField %></p>
+                <span><h4>written at:</h4> <%= val.createdAt%> </span>
+                <div> <a href=<%= "/feed/" + val._id %> >see more</a></div>
+            </div>
+        </div>
+    <% }) %> 
+    
+<% }  else { %>
+    <p style="font-size: 3pc; color: rgb(47, 0, 255);">There is No Data!</p>
+<% }; %>%>
+</div>

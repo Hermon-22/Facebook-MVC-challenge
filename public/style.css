@@ -1,0 +1,35 @@
+body{
+    background-color: #c8d8ee;
+    /* #ECEFF5 */
+}
+.butn{
+    text-align: center;
+    color: rgb(235, 235, 255);
+    font-size: 30px;
+    text-decoration: none;
+    
+}
+.butn h1{
+    background-color: rgb(65, 65, 231);
+    height: 70px;
+}
+.butn h1:hover{
+    color: wheat;
+}
+.feeds{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.form{
+    width: 40%;
+}
+.submitbtn{
+    margin: 8px 20px;
+}
+.cards{
+    border: tomato 8px inset;
+    margin-top: 10px;
+    border-radius: 20px;
+}

@@ -1,0 +1,21 @@
+<%- include('./main/header.ejs') %> 
+
+<form method="POST" action=<%= "/feed/" + result.id %> class="edit">
+    <div class="mx-5 form">
+        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <input type="text" name="nameField" class="form-control" id="exampleFormControlInput1" value="<%= result.nameField %>">
+    </div>
+    <!-- if any error happens -->
+    <% if(error && error.nameField ){ %> 
+        <p style="color: red;"><%= error.nameField.properties.message %> </p>
+    <% } %>
+    <div class="mx-5 form">
+        <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+        <textarea class="form-control" name="messageField" id="exampleFormControlTextarea1" rows="3"><%= result.messageField %></textarea>
+    </div>
+    <!-- if any error happens -->
+    <% if(error && error.messageField ){ %> 
+        <p style="color: red;"><%= error.messageField.properties.message %> </p>
+    <% } %>
+    <button class="btn btn-warning btn-sm submitbtn">EDIT</button>
+</form>

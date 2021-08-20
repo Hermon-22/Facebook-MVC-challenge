@@ -1,0 +1,12 @@
+<%- include('./main/header.ejs') %> 
+
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Name: <%= post.nameField %> </h5>
+        <p class="card-text">Message: <%= post.messageField %></p>
+        <p class="card-text">Time: <%= post.createdAt %></p>
+        <a href="/feed/edit/<%= post._id %> " class="btn btn-success">EDIT</a>
+        <a href="/feed/delete/<%= post._id %> " class="btn btn-danger">DELETE</a>
+    </div>
+</div>
