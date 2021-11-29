@@ -70,10 +70,15 @@ const showOne = (req, res) => {
         .catch(err => console.log(err) )
 }
 
+const notF = ( req, res) => {
+    res.status(404).render('404', {pageTitle: 'Not found'} )
+} 
+
 module.exports = {
     home,
     showOne,
     updateFeed,
     removeFeed,
-    editFeed
+    editFeed,
+    notF
 }

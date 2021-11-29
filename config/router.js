@@ -8,4 +8,7 @@ router.get('/feed/delete/:id', controller.removeFeed)
 router.get('/feed/edit/:id', controller.updateFeed)
 router.post('/feed/:id', controller.editFeed)
 
+// NOT FOUND
+router.get('/:id', controller.notF)
+
 module.exports = router
